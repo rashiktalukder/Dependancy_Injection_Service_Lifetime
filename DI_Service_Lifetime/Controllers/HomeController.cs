@@ -35,12 +35,14 @@ namespace DI_Service_Lifetime.Controllers
         {
             StringBuilder message = new StringBuilder();
 
+            message.Append("\n\n\nNote:\n\n");
             message.Append($"Transient : after start the application, New Service will create on every request \n");
             message.Append($"Scoped : after start the application, New Service create on once per request. \n");
             message.Append($"Singleton : after start the application, this service will create just one time on application runningtime/lifetime \n\n\n");
 
-            message.Append($"Transient 1 : {transient1.GetGuid()}\n");  //after start the application, New Service create on every request
-            message.Append($"Transient 2 : {transient2.GetGuid()}\n\n\n");  //after start the application, New Service create on every request
+            message.Append("Services:\n\n");
+            message.Append($"Transient 1 : {transient1.GetGuid()}\n");  //after start the application, New Service create on every request.
+            message.Append($"Transient 2 : {transient2.GetGuid()}\n\n\n");  //after start the application, New Service create on every request.
 
             message.Append($"Scoped 1 : {scoped1.GetGuid()}\n");    //after start the application, New Service create on once per request. that means, if you refresh, the scope1 and scope2 value will be same.
             message.Append($"Scoped 2 : {scoped2.GetGuid()}\n\n\n");//after start the application, New Service create on once per request. that means, if you refresh, the scope1 and scope2 value will be same.
